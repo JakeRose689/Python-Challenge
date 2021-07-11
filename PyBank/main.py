@@ -44,7 +44,7 @@ with open(file_path) as data:
 
     print(Summary)
     
-output_path=os.path.join("Resources", "summary.txt")
+output_path=os.path.join("Analysis", "summary.txt")
 
 with open(output_path, 'w') as txtfile:
     txtfile.write(Summary)
