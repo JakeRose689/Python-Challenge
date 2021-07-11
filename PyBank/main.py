@@ -10,7 +10,6 @@ average_list=[]
 month_list=[]
 increase=0
 decrease=0
-change=0
 
 with open(file_path) as data:
     reader=csv.reader(data)
@@ -32,16 +31,16 @@ with open(file_path) as data:
     average=round(sum(average_list)/month_count, 2)
     increase=max(average_list)
     decrease=min(average_list)
-    month_list=average_list.index(increase)
-    month_list=average_list.index(decrease)
+    increase_index=average_list.index(increase)
+    decrease_index=average_list.index(decrease)
 
     Summary=(f"Financial Analysis\n"
     f"---------------------------\n"
     f"Total Months: {month_count}\n"
     f"Total: ${total_sum}\n"
     f"Average Change: ${average}\n"
-    f"Greatest Increase in Profits: {month_list} {increase}\n"
-    f"Greatest Decrease in Profits: {month_list} {decrease}")
+    f"Greatest Increase in Profits: {month_list[increase_index]} {increase}\n"
+    f"Greatest Decrease in Profits: {month_list[decrease_index]} {decrease}")
 
     print(Summary)
     
